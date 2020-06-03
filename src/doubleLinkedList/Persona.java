@@ -1,6 +1,4 @@
-package lists;
-
-import java.util.Objects;
+package doubleLinkedList;
 
 public class Persona implements Comparable<Persona> {
     public String id;

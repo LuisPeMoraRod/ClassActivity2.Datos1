@@ -1,4 +1,4 @@
-package lists;
+package doubleLinkedList;
 
 public class List<T extends Comparable<T>> {
     private Node<T> first = null;
@@ -40,6 +40,31 @@ public class List<T extends Comparable<T>> {
             temp = temp.getNext();
         }
         return -1;
+    }
+
+    public Node<T> deleteFirst(){
+        if(this.first!=null){
+            Node<T> temp = this.first;
+            this.first = this.first.getNext();
+            this.first.setPrevious(null);
+            return temp;
+
+        }
+        else{
+            return null;
+        }
+    }
+
+    public Node<T> deleteLast(){
+        if(this.last != null){
+            Node<T> temp = this.last;
+            this.last = this.last.getPrevious();
+            this.last.setNext(null);
+            return temp;
+        }
+        else{
+            return null;
+        }
     }
 
     @Override

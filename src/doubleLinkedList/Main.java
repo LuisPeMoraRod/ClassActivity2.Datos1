@@ -1,4 +1,4 @@
-package lists;
+package doubleLinkedList;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,5 +27,11 @@ public class Main {
 
         System.out.println(lista.getLast().getNext());
         System.out.println(lista.getLast().getPrevious());
+
+        lista.deleteFirst();
+        System.out.println(lista);
+
+        lista.deleteLast();
+        System.out.println(lista);
     }
 }
