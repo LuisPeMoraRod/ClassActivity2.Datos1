@@ -24,5 +24,8 @@ public class Main {
         listP.addFirst(new Persona("Pedro"));
 
         System.out.println(listP.find(new Persona("Juan")));
+
+        System.out.println(lista.getLast().getNext());
+        System.out.println(lista.getLast().getPrevious());
     }
 }

@@ -5,7 +5,9 @@ public class List<T extends Comparable<T>> {
     private Node<T> last = null;
 
     public void addFirst(T value) {
-        this.first = new Node<>(value, this.first);
+        Node<T> newElement = new Node<>(value,this.first);
+        newElement.setPrevious(this.first);
+        this.first = newElement;
         if (this.last == null) {
             this.last = this.first;
         }
@@ -18,6 +20,7 @@ public class List<T extends Comparable<T>> {
         }
         Node<T> newElement = new Node<>(value);
         this.last.setNext(newElement);
+        newElement.setPrevious(this.last);
         this.last = newElement;
     }
 
@@ -52,5 +55,9 @@ public class List<T extends Comparable<T>> {
             temp = temp.getNext();
         }
         return stringBuilder.toString();
+    }
+
+    public Node<T> getLast(){
+        return this.last;
     }
 }
