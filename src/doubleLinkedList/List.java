@@ -6,13 +6,17 @@ public class List<T extends Comparable<T>> {
     private int size = 0;
 
     public void addFirst(T value) {
-        Node<T> newElement = new Node<>(value,this.first,null);
+        Node<T> newElement = new Node<>(value, this.first, null);
         newElement.setPrevious(this.first);
         this.first = newElement;
         if (this.last == null) {
             this.last = this.first;
         }
         size++;
+    }
+
+    public int getSize(){
+        return this.size;
     }
 
 
@@ -46,11 +50,62 @@ public class List<T extends Comparable<T>> {
         return -1;
     }
 
-    public int getSize(){
-        return this.size;
+    public T getValue(int index){
+
+        Node<T> current = this.first;
+        int reference = 0;
+
+        while(current != null){
+
+            if(reference == index){
+
+                return current.getValue();
+            }
+
+            else if(index>getSize()-1){
+                System.out.println("Index out of limits");
+                return null;
+            }
+
+            else{
+                reference++;
+                current = current.getNext();
+            }
+
+        }
+        return null;
+
     }
 
-    public Node<T> insertElement(T e, int index){
+    public void modifyValue(T e, int index){
+
+        Node<T> current = this.first;
+        int reference = 0;
+
+        while(current != null){
+
+            if(reference == index){
+
+                current.setValue(e);
+                return;
+            }
+
+            else if(index>getSize()-1){
+                System.out.println("Index out of limits");
+                return;
+            }
+
+            else{
+                reference++;
+                current = current.getNext();
+            }
+
+        }
+        return;
+
+    }
+
+    public T insertElement(T e, int index){
 
         Node<T> current = this.first;
         Node<T> previous = this.first;
@@ -71,7 +126,7 @@ public class List<T extends Comparable<T>> {
                     current.setPrevious(newElement);
                 }
                 size++;
-                return current;
+                return current.getValue();
             }
 
             else if(index>getSize()-1){
@@ -171,4 +226,5 @@ public class List<T extends Comparable<T>> {
     public Node<T> getLast(){
         return this.last;
     }
+
 }
