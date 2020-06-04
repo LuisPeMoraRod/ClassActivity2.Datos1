@@ -34,5 +34,10 @@ public class Main {
         lista.deleteElement(111);
         System.out.println(lista.getSize());
         System.out.println(lista);
+
+        lista.insertElement(222,4);
+        System.out.println(lista);
+
+
     }
 }

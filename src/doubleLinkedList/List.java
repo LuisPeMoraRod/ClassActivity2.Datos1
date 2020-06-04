@@ -50,6 +50,38 @@ public class List<T extends Comparable<T>> {
         return this.size;
     }
 
+    public void insertElement(T element, int index){
+        int reference = 0;
+        Node<T> current = this.first;
+        Node<T> currentPrevious = this.first;
+
+        if (index > this.size){
+            System.out.println("Index out of bounds");
+        }
+        else{
+            while(reference<this.size){
+                if(reference == index){
+                    if (current == this.first){
+                        addFirst(element);
+                    }
+                    else if(current==this.last){
+                        addLast(element);
+                    }
+                    else{
+                        Node <T> newElement = new Node<>(element, current, currentPrevious);
+                        current.setPrevious(newElement);
+                    }
+                    return;
+                }
+                current = current.getNext();
+                reference++;
+
+            }
+        }
+
+
+    }
+
     public Node<T> deleteElement(T e){
 
         Node<T> current = this.first;
