@@ -41,17 +41,19 @@ public class Main {
         System.out.println(lista.getValue(3));
 
         lista.modifyValue(333,3);
+
         System.out.println(lista);
-
-
         System.out.println(listP);
+
+        /*
         BubbleSort<String> bubbleSort = new BubbleSort(listP);
         bubbleSort.sort();
         System.out.println(bubbleSort.getSortedList());
+        */
 
-
-
-
-
+        SelectionSort<String> selectionSort = new SelectionSort(listP);
+        selectionSort.sort();
+        System.out.println(selectionSort.getSortedList());
+        
     }
 }
