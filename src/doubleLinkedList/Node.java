@@ -11,9 +11,10 @@ public class Node<T extends Comparable<T>> {
         this.previous = null;
     }
 
-    public Node(T value, Node<T> next) {
+    public Node(T value, Node<T> next, Node<T> previous) {
         this.value = value;
         this.next = next;
+        this.previous = previous;
     }
 
     @Override

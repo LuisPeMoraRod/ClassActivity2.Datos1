@@ -5,7 +5,10 @@ public class Main {
         List<Integer> lista = new List<Integer>();
         lista.addFirst(666);
         lista.addFirst(777);
+        lista.addFirst(999);
         lista.addLast(555);
+        lista.addLast(111);
+
 
         List<String> listaStr = new List<>();
         listaStr.addFirst("a");
@@ -28,10 +31,8 @@ public class Main {
         System.out.println(lista.getLast().getNext());
         System.out.println(lista.getLast().getPrevious());
 
-        lista.deleteFirst();
-        System.out.println(lista);
-
-        lista.deleteLast();
+        lista.deleteElement(111);
+        System.out.println(lista.getSize());
         System.out.println(lista);
     }
 }
