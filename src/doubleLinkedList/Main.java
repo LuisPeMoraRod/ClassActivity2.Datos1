@@ -51,9 +51,13 @@ public class Main {
         System.out.println(bubbleSort.getSortedList());
         */
 
-        SelectionSort<String> selectionSort = new SelectionSort(listP);
+        /*SelectionSort<String> selectionSort = new SelectionSort(listP);
         selectionSort.sort();
         System.out.println(selectionSort.getSortedList());
-        
+        */
+
+        InsertionSort<Integer> insertionSort = new InsertionSort(lista);
+        insertionSort.sort();
+        System.out.println(insertionSort.getSortedList());
     }
 }
