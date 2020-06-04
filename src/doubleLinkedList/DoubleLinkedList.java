@@ -1,6 +1,6 @@
 package doubleLinkedList;
 
-public class List<T extends Comparable<T>> {
+public class DoubleLinkedList<T extends Comparable<T>> {
     private Node<T> first = null;
     private Node<T> last = null;
     private int size = 0;
@@ -213,7 +213,7 @@ public class List<T extends Comparable<T>> {
         if (this.first == null) {
             return "List of: <empty>";
         }
-        StringBuilder stringBuilder = new StringBuilder("List of: ");
+        StringBuilder stringBuilder = new StringBuilder(" ");
         Node<T> temp = this.first;
         while (temp != null) {
             stringBuilder.append(temp.getValue().toString());
@@ -225,6 +225,23 @@ public class List<T extends Comparable<T>> {
 
     public Node<T> getLast(){
         return this.last;
+    }
+
+    public boolean comparesLists(Node<T> listToCompare) {
+        Node<T> pointer = this.first;
+        Node<T> pointer2 = listToCompare;
+        for (int i = 0; i < size; i++) {
+            if (!(pointer.getValue().compareTo(pointer2.getValue()) == 0)) {
+                return false;
+            }
+            pointer = pointer.getNext();
+            pointer2 = pointer2.getNext();
+        }
+        return true;
+    }
+
+    public Node<T> getFirst(){
+        return first;
     }
 
 }

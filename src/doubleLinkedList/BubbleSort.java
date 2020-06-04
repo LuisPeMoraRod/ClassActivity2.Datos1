@@ -2,13 +2,13 @@ package doubleLinkedList;
 
 public class BubbleSort<T extends Comparable <T>> {
 
-    private List<T> list;
+    private DoubleLinkedList<T> doubleLinkedList;
     private int listSize;
 
-    public BubbleSort(List<T> list){
+    public BubbleSort(DoubleLinkedList<T> doubleLinkedList){
 
-        this.list = list;
-        this.listSize = list.getSize();
+        this.doubleLinkedList = doubleLinkedList;
+        this.listSize = doubleLinkedList.getSize();
 
     }
 
@@ -22,12 +22,12 @@ public class BubbleSort<T extends Comparable <T>> {
 
             for (int index = 0; index < end; index ++){
 
-                element1 = list.getValue(index);
-                element2 = list.getValue(index+1);
+                element1 = doubleLinkedList.getValue(index);
+                element2 = doubleLinkedList.getValue(index+1);
 
                 if(element1.compareTo(element2)>0){
-                    list.modifyValue(element1,index+1);
-                    list.modifyValue(element2,index);
+                    doubleLinkedList.modifyValue(element1,index+1);
+                    doubleLinkedList.modifyValue(element2,index);
                 }
 
             }
@@ -35,8 +35,8 @@ public class BubbleSort<T extends Comparable <T>> {
 
     }
 
-    public List<T> getSortedList(){
-        return list;
+    public DoubleLinkedList<T> getSortedList(){
+        return doubleLinkedList;
     }
 
 }
