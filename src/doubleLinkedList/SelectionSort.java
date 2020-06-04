@@ -2,13 +2,13 @@ package doubleLinkedList;
 
 public class SelectionSort<T extends Comparable <T>> {
 
-    private List<T> list;
+    private DoubleLinkedList<T> doubleLinkedList;
     private int listSize;
 
-    public SelectionSort(List<T> list){
+    public SelectionSort(DoubleLinkedList<T> doubleLinkedList){
 
-        this.list = list;
-        this.listSize = list.getSize();
+        this.doubleLinkedList = doubleLinkedList;
+        this.listSize = doubleLinkedList.getSize();
 
     }
 
@@ -17,7 +17,7 @@ public class SelectionSort<T extends Comparable <T>> {
         int indexOfMin = start;
 
         for (int index = start+1; index <= listSize-1; index++){
-            if (list.getValue(index).compareTo(list.getValue(indexOfMin))<0){
+            if (doubleLinkedList.getValue(index).compareTo(doubleLinkedList.getValue(indexOfMin))<0){
                 indexOfMin = index;
             }
         }
@@ -34,17 +34,17 @@ public class SelectionSort<T extends Comparable <T>> {
         for (int currentIndex = 0; currentIndex <= listSize-1; currentIndex++){
 
             minIndex = getMinIndex(currentIndex);
-            minElement = list.getValue(minIndex);
-            element = list.getValue(currentIndex);
+            minElement = doubleLinkedList.getValue(minIndex);
+            element = doubleLinkedList.getValue(currentIndex);
 
-            list.modifyValue(minElement,currentIndex);
-            list.modifyValue(element,minIndex);
+            doubleLinkedList.modifyValue(minElement,currentIndex);
+            doubleLinkedList.modifyValue(element,minIndex);
 
         }
     }
 
-    public List<T> getSortedList(){
-        return this.list;
+    public DoubleLinkedList<T> getSortedList(){
+        return this.doubleLinkedList;
     }
 
 }
