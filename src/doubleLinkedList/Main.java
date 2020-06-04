@@ -1,11 +1,14 @@
-package lists;
+package doubleLinkedList;
 
 public class Main {
     public static void main(String[] args) {
         List<Integer> lista = new List<Integer>();
         lista.addFirst(666);
         lista.addFirst(777);
+        lista.addFirst(999);
         lista.addLast(555);
+        lista.addLast(111);
+
 
         List<String> listaStr = new List<>();
         listaStr.addFirst("a");
@@ -24,5 +27,17 @@ public class Main {
         listP.addFirst(new Persona("Pedro"));
 
         System.out.println(listP.find(new Persona("Juan")));
+
+        System.out.println(lista.getLast().getNext());
+        System.out.println(lista.getLast().getPrevious());
+
+        lista.deleteElement(111);
+        System.out.println(lista.getSize());
+        System.out.println(lista);
+
+        lista.insertElement(222,4);
+        System.out.println(lista);
+
+
     }
 }
